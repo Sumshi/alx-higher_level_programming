@@ -58,9 +58,9 @@
 	5) You can find the source code here
 		The output of the program should be: Holberton SchoolHolberton SchoolHolberton School
 Holberton
-			3 times the value of str
-			followed by a new line
-			followed by the 9 first characters of str, followed by a new line
+		3 times the value of str
+		followed by a new line
+		followed by the 9 first characters of str, followed by a new line
 	6) output for concatenating the 2 strings should be Welcome to Holberton School!
 		you have to use both str1 and str2
 	7) Your program should be exactly 8 lines long
