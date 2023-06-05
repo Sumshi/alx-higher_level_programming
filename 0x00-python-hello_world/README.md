@@ -34,18 +34,18 @@
 			TASKS
 	0) Write a Shell script that runs a Python script.
 		The Python file name will be saved in the environment variable $PYFILE
-			guillaume@ubuntu:~/py/0x00$ cat main.py 
+			guillaume@ubuntu:~/py/0x00$ cat main.py
 			#!/usr/bin/python3
 			print("Best School")
 
 			guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
 			guillaume@ubuntu:~/py/0x00$ ./0-run
 			Best School
-			guillaume@ubuntu:~/py/0x00$ 
+			guillaume@ubuntu:~/py/0x00$
 	1) write a Shell script that runs Python code.
 		The Python code will be saved in the environment variable $PYCODE
 			export PYCODE='print(f"Best School: {88+10}")'
-			guillaume@ubuntu:~/py/0x00$ ./1-run_inline 
+			guillaume@ubuntu:~/py/0x00$ ./1-run_inline
 			Best School: 98
 	2) Write a Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
 	3) The output of the script should be:
@@ -91,7 +91,5 @@
               9 BINARY_POWER
              10 BINARY_ADD
              11 RETURN_VALUE
-		
-		
 				AUTHOR: SUMAYA AHMED
 				THE END :)
