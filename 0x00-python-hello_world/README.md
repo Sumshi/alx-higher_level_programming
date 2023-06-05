@@ -57,7 +57,7 @@
 		You have to use f-strings
 	5) You can find the source code here
 		The output of the program should be: Holberton SchoolHolberton SchoolHolberton School
-Holberton
+			Holberton
 		3 times the value of str
 		followed by a new line
 		followed by the 9 first characters of str, followed by a new line
