@@ -69,7 +69,7 @@
 		middle_word should contain the value of the variable word without the first and last letters
 		First 3 letters: Hol, Last 2 letters: on, Middle word: olberto
 	8) str = "Python is an interpreted, interactive, object-oriented programming\
- language that combines remarkable power with very clear syntax"
+ 			language that combines remarkable power with very clear syntax"
 		print(str)
 		your code should print object-oriented programming with Python, followed by a new line.
 	9) Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
