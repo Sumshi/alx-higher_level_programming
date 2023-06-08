@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if __name__ == "__main__":  # will be executed if script is run directly
+if __name__ == "__main__":  # will be executed if script is the main module
     from calculator_1 import add, sub, mul, div
 a = 10
 b = 5
