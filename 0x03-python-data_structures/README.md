@@ -30,20 +30,20 @@ Write a function that prints all integers of a list.
 **Solution:** [0-print_list_integer.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/0-print_list_integer.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 0-main.py
+$ vagrant@ubuntu:~/0x03$ cat 0-main.py
 #!/usr/bin/python3
 print_list_integer = __import__('0-print_list_integer').print_list_integer
 
 my_list = [1, 2, 3, 4, 5]
 print_list_integer(my_list)
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./0-main.py
+$ vagrant@ubuntu:~/0x03$ ./0-main.py
 1
 2
 3
 4
 5
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Secure access to an element in a list**
@@ -59,7 +59,7 @@ Write a function that retrieves an element from a list like in C.
 **Solution:** [1-element_at.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/1-element_at.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 1-main.py
+$ vagrant@ubuntu:~/0x03$ cat 1-main.py
 #!/usr/bin/python3
 element_at = __import__('1-element_at').element_at
 
@@ -67,9 +67,9 @@ my_list = [1, 2, 3, 4, 5]
 idx = 3
 print("Element at index {:d} is {}".format(idx, element_at(my_list, idx)))
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./1-main.py
+$ vagrant@ubuntu:~/0x03$ ./1-main.py
 Element at index 3 is 4
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Replace element**
@@ -85,7 +85,7 @@ Write a function that replaces an element of a list at a specific position (like
 **Solution:** [2-replace_in_list.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/2-replace_in_list.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 2-main.py
+$ vagrant@ubuntu:~/0x03$ cat 2-main.py
 #!/usr/bin/python3
 replace_in_list = __import__('2-replace_in_list').replace_in_list
 
@@ -97,10 +97,10 @@ new_list = replace_in_list(my_list, idx, new_element)
 print(new_list)
 print(my_list)
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./2-main.py
+$ vagrant@ubuntu:~/0x03$ ./2-main.py
 [1, 2, 3, 9, 5]
 [1, 2, 3, 9, 5]
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Print a list of integers... in reverse**
@@ -117,20 +117,20 @@ Write a function that prints all integers of a list, in reverse order.
 **Solution:** [3-print_reversed_list_integer.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/3-print_reversed_list_integer.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 3-main.py
+$ vagrant@ubuntu:~/0x03$ cat 3-main.py
 #!/usr/bin/python3
 print_reversed_list_integer = __import__('3-print_reversed_list_integer').print_reversed_list_integer
 
 my_list = [1, 2, 3, 4, 5]
 print_reversed_list_integer(my_list)
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./3-main.py
+$ vagrant@ubuntu:~/0x03$ ./3-main.py
 5
 4
 3
 2
 1
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Replace in a copy**
@@ -146,7 +146,7 @@ Write a function that replaces an element in a list at a specific position witho
 **Solution:** [4-new_in_list.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/4-new_in_list.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 4-main.py
+$ vagrant@ubuntu:~/0x03$ cat 4-main.py
 #!/usr/bin/python3
 new_in_list = __import__('4-new_in_list').new_in_list
 
@@ -158,10 +158,10 @@ new_list = new_in_list(my_list, idx, new_element)
 print(new_list)
 print(my_list)
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./4-main.py
+$ vagrant@ubuntu:~/0x03$ ./4-main.py
 [1, 2, 3, 9, 5]
 [1, 2, 3, 4, 5]
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Can you C me now?**
@@ -176,7 +176,7 @@ Write a function that removes all characters c and C from a string.
 **Solution:** [5-no_c.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/5-no_c.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 5-main.py
+$ vagrant@ubuntu:~/0x03$ cat 5-main.py
 #!/usr/bin/env python3
 no_c = __import__('5-no_c').no_c
 
@@ -184,11 +184,11 @@ print(no_c("Holberton School"))
 print(no_c("Chicago"))
 print(no_c("C is fun!"))
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./5-main.py
+$ vagrant@ubuntu:~/0x03$ ./5-main.py
 Holberton Shool
 hiago
  is fun!
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Lists of lists = Matrix**
@@ -205,7 +205,7 @@ Write a function that prints a matrix of integers.
 **Solution:** [6-print_matrix_integer.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/6-print_matrix_integer.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 6-main.py
+$ vagrant@ubuntu:~/0x03$ cat 6-main.py
 #!/usr/bin/python3
 print_matrix_integer = __import__('6-print_matrix_integer').print_matrix_integer
 
@@ -219,13 +219,13 @@ print_matrix_integer(matrix)
 print("--")
 print_matrix_integer()
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./6-main.py | cat -e
+$ vagrant@ubuntu:~/0x03$ ./6-main.py | cat -e
 1 2 3$
 4 5 6$
 7 8 9$
 --$
 $
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Tuples addition**
@@ -244,7 +244,7 @@ Write a function that adds 2 tuples.
 **Solution:** [7-add_tuple.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/7-add_tuple.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 7-main.py
+$ vagrant@ubuntu:~/0x03$ cat 7-main.py
 #!/usr/bin/python3
 add_tuple = __import__('7-add_tuple').add_tuple
 
@@ -256,11 +256,11 @@ print(new_tuple)
 print(add_tuple(tuple_a, (1, )))
 print(add_tuple(tuple_a, ()))
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./7-main.py
+$ vagrant@ubuntu:~/0x03$ ./7-main.py
 (89, 100)
 (2, 89)
 (1, 89)
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **More returns**
@@ -274,7 +274,7 @@ Write a function that returns a tuple with the length of a string and its first 
 **Solution:** [8-multiple_returns.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/8-multiple_returns.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 8-main.py
+$ vagrant@ubuntu:~/0x03$ cat 8-main.py
 #!/usr/bin/python3
 multiple_returns = __import__('8-multiple_returns').multiple_returns
 
@@ -282,9 +282,9 @@ sentence = "At Holberton school, I learnt C!"
 length, first = multiple_returns(sentence)
 print("Length: {:d} - First character: {}".format(length, first))
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./8-main.py
+$ vagrant@ubuntu:~/0x03$ ./8-main.py
 Length: 32 - First character: A
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Find the max**
@@ -300,7 +300,7 @@ Write a function that finds the biggest integer of a list.
 **Solution:** [9-max_integer.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/9-max_integer.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 9-main.py
+$ vagrant@ubuntu:~/0x03$ cat 9-main.py
 #!/usr/bin/python3
 max_integer = __import__('9-max_integer').max_integer
 
@@ -308,9 +308,9 @@ my_list = [1, 90, 2, 13, 34, 5, -13, 3]
 max_value = max_integer(my_list)
 print("Max: {}".format(max_value))
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./9-main.py
+$ vagrant@ubuntu:~/0x03$ ./9-main.py
 Max: 90
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Only by 2**
@@ -325,7 +325,7 @@ Write a function that finds all multiples of 2 in a list.
 **Solution:** [10-divisible_by_2.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/10-divisible_by_2.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 10-main.py
+$ vagrant@ubuntu:~/0x03$ cat 10-main.py
 #!/usr/bin/python3
 divisible_by_2 = __import__('10-divisible_by_2').divisible_by_2
 
@@ -337,7 +337,7 @@ while i < len(list_result):
     print("{:d} {:s} divisible by 2".format(my_list[i], "is" if list_result[i] else "is not"))
     i += 1
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./10-main.py
+$ vagrant@ubuntu:~/0x03$ ./10-main.py
 0 is divisible by 2
 1 is not divisible by 2
 2 is divisible by 2
@@ -345,7 +345,7 @@ $ amonkeyprogrammer@ubuntu:~/0x03$ ./10-main.py
 4 is divisible by 2
 5 is not divisible by 2
 6 is divisible by 2
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Delete at**
@@ -360,7 +360,7 @@ Write a function that deletes the item at a specific position in a list.
 **Solution:** [11-delete_at.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/11-delete_at.py)
 
 ```py
-$ amonkeyprogrammer@ubuntu:~/0x03$ cat 11-main.py
+$ vagrant@ubuntu:~/0x03$ cat 11-main.py
 #!/usr/bin/python3
 delete_at = __import__('11-delete_at').delete_at
 
@@ -370,10 +370,10 @@ new_list = delete_at(my_list, idx)
 print(new_list)
 print(my_list)
 
-$ amonkeyprogrammer@ubuntu:~/0x03$ ./11-main.py
+$ vagrant@ubuntu:~/0x03$ ./11-main.py
 [1, 2, 3, 5]
 [1, 2, 3, 5]
-$ amonkeyprogrammer@ubuntu:~/0x03$
+$ vagrant@ubuntu:~/0x03$
 ```
 
 ### **Switch**
@@ -387,11 +387,11 @@ Complete the source code in order to switch value of `a` and `b`
 **Solution:** [12-switch.py](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/12-switch.py)
 
 ```sh
-$ amonkeyprogrammer@ubuntu:~/py/0x03$ ./12-switch.py
+$ vagrant@ubuntu:~/py/0x03$ ./12-switch.py
 a=10 - b=89
-$ amonkeyprogrammer@ubuntu:~/py/0x03$ wc -l 12-switch.py
+$ vagrant@ubuntu:~/py/0x03$ wc -l 12-switch.py
 5 12-switch.py
-$ amonkeyprogrammer@ubuntu:~/py/0x03$
+$ vagrant@ubuntu:~/py/0x03$
 ```
 
 ### **Linked list palindrome (C programming language)**
@@ -403,7 +403,7 @@ Write a function in C that checks if a singly linked list is a palindrome.
 * An empty list is considered a palindrome
 
 ```c
-$ amonkeyprogrammer@ubuntu:0x03$ cat lists.h 
+$ vagrant@ubuntu:0x03$ cat lists.h 
 #ifndef LISTS_H
 #define LISTS_H
 
@@ -428,11 +428,11 @@ void free_listint(listint_t *head);
 int is_palindrome(listint_t **head);
 
 #endif /* LISTS_H */
-$ amonkeyprogrammer@ubuntu:0x03$
+$ vagrant@ubuntu:0x03$
 ```
 
 ```c
-$ amonkeyprogrammer@ubuntu:0x03$ cat lists.h 
+$ vagrant@ubuntu:0x03$ cat lists.h 
 #ifndef LISTS_H
 #define LISTS_H
 
@@ -457,11 +457,11 @@ void free_listint(listint_t *head);
 int is_palindrome(listint_t **head);
 
 #endif /* LISTS_H */
-$ amonkeyprogrammer@ubuntu:0x03$
+$ vagrant@ubuntu:0x03$
 ```
 
 ```c
-$ amonkeyprogrammer@ubuntu:0x03$ cat 13-main.c
+$ vagrant@ubuntu:0x03$ cat 13-main.c
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
@@ -497,13 +497,13 @@ int main(void)
 
     return (0);
 }
-$ amonkeyprogrammer@ubuntu:0x03$
+$ vagrant@ubuntu:0x03$
 ```
 
 **Solution:** [13-is_palindrome.c](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/13-is_palindrome.c), [lists.h](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/lists.h)
 
 ```c
-$ amonkeyprogrammer@ubuntu:0x03$ cat 13-main.c
+$ vagrant@ubuntu:0x03$ cat 13-main.c
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
@@ -539,7 +539,7 @@ int main(void)
 
     return (0);
 }
-$ amonkeyprogrammer@ubuntu:0x03$
+$ vagrant@ubuntu:0x03$
 ```
 
 ### **CPython #0: Python lists**
@@ -558,8 +558,8 @@ Create a C function that prints some basic info about Python lists.
 **Solution:** [100-print_python_list_info.c](https://github.com/Cofucan/alx-higher_level_programming/blob/main/0x03-python-data_structures/100-print_python_list_info.c)
 
 ```sh
-$ amonkeyprogrammer@ubuntu:~/CPython$ gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,PyList -o libPyList.so -fPIC -I/usr/include/python3.4 100-print_python_list_info.c
-$ amonkeyprogrammer@ubuntu:~/CPython$ cat 100-test_lists.py 
+$ vagrant@ubuntu:~/CPython$ gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,PyList -o libPyList.so -fPIC -I/usr/include/python3.4 100-print_python_list_info.c
+$ vagrant@ubuntu:~/CPython$ cat 100-test_lists.py 
 import ctypes
 
 lib = ctypes.CDLL('./libPyList.so')
@@ -581,7 +581,7 @@ l.append(4)
 lib.print_python_list_info(l)
 l.pop()
 lib.print_python_list_info(l)
-$ amonkeyprogrammer@ubuntu:~/CPython$ python3 100-test_lists.py 
+$ vagrant@ubuntu:~/CPython$ python3 100-test_lists.py 
 [*] Size of the Python List = 2
 [*] Allocated = 2
 Element 0: str
@@ -616,5 +616,5 @@ Element 0: int
 Element 1: int
 Element 2: int
 Element 3: int
-$ amonkeyprogrammer@CPython:~/CPython$
+$ vagrant@CPython:~/CPython$
 ```
