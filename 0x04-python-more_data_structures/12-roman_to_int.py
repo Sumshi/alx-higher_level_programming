@@ -13,15 +13,15 @@ def roman_to_int(roman_string):
         'M': 1000
     }
     result = 0  # holds the converted integer
-    prev_value = 0
+    prev_value = 0  # keeps track of previous value
 
     for char in reversed(roman_string):
         value = numerals[char]
 
         if value < prev_value:
-            result -= value
+            result = result - value
         else:
-            result += value
+            result = result + value
 
         prev_value = value
 
