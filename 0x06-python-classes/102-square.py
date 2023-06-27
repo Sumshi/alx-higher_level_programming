@@ -18,7 +18,7 @@ class Square:
     @size.setter
     def size(self, value):
         """retrieves value of private attribute"""
-        if type(value) is not int or type(value) is not float:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
@@ -41,7 +41,7 @@ class Square:
         return self.area() < other.area()
 
     def __le__(self, other):
-        """Define the <= comparison to a Square."""
+        """implements the <= comparison to a Square."""
         return self.area() <= other.area()
 
     def __gt__(self, other):
