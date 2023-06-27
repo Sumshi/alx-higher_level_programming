@@ -52,4 +52,15 @@ class Square:
                 print("")
             for j in range(self.__size):
                 print(" " * self.__position[0], end="")
-                print("#" * self.__size)         
+                print("#" * self.__size)
+
+    def __str__(self):
+        square = ""
+        if self.__size == 0:
+            square += "\n"
+        else:
+            for _ in range(self.__position[1]):
+                square += "\n"
+            for _ in range(self.__size):
+                square += " " * self.__position[0] + "#" * self.__size + "\n"
+        return square.rstrip()
