@@ -5,5 +5,5 @@
 
 class Square:
     """A private instance square"""
-    def __init__(self, __size=0):
-        pass
+    def __init__(self, __size):
+        self.__size = __size
