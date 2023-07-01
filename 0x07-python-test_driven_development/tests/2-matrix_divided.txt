@@ -1,0 +1,84 @@
+The ``divide matrix`` module
+======================
+
+Using ``div``
+-------------------
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+>>> matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+    ]
+"""Dividing matrix with integer"""
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.00], [1.33, 1.67, 2.00]]
+
+"""Dividing matrix with float"""
+>>> matrix_divided(matrix, 2.5)
+[[0.40, 0.80, 1.20], [1.60, 2.00, 2.40]]
+
+"""Dividing matrix with negative value"""
+>>> matrix_divided(matrix, -2)
+[[-0.50, -1.00, -1.50], [-2.00, -2.50, -3.00]]
+
+"""Divide float matrix with float value"""
+>>> matrix_divided(([[3.4, 5.2], [2.4, 7.4]]), 1.2)
+[[2.83, 4.33], [2.00, 6.17]]
+
+"""Divide float matrix with int value"""
+>>> matrix_divided(([[2.4, 1.3], [1.8, 6.3]]), 2)
+[[1.20, 0.65], [0.90, 3.15]]
+
+"""ERRORS"""
+
+"""dividing with a non integer, a string"""
+>>> matrix_divided((["mango", "eggs"], ["milk", "flour"]), 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+"""dividing with a non float, a string"""
+>>> matrix_divided((["mango", "eggs"], ["milk", "flour"]), 2.5)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+"""Matrix must be of the same size"""
+>>> matrix_divided(([1, 2, 3], [7, 9]), 2)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+"""Dividing matrix by 0"""
+>>> matrix_divided(([1, 2, 3], [7, 9, 8]), 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+"""Dividing matrix by string"""
+>>> matrix_divided(([1, 2, 3], [7, 9, 8]), "john")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+"""when one parameter is passes"""
+>>> matrix_divided(([1, 2, 3], [7, 9, 8]))
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+
+"""when one parameter is passes"""
+>>> matrix_divided(3)
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+"""when both matrix and div are missing"""
+>>> matrix_divided()
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

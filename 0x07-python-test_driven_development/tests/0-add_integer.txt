@@ -4,7 +4,9 @@ The ``add two integer`` module
 Using ``add_integer``
 -------------------
 
+"""importing the function from module"""
 >>> add_integer = __import__('0-add_integer').add_integer
+
 >>> add_integer(5,2)
 7
 >>> add_integer(1.0, 2.1)
@@ -24,42 +26,42 @@ Using ``add_integer``
 
 """ ERRORS """
 
-#pass a non integer, a string
+"""pass a non integer, a string"""
 >>> add_integer("sumaya", 2)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
 
-#pass in a list
+"""pass in a list"""
 >>> add_integer([0], {})
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
 
-#pass in a string for b
+"""pass in a string for b"""
 >>> add_integer(5, "terry")
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
 
 
-#pass in nothing
+"""pass in nothing"""
 >>> add_integer(None)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
 
-#converting float infinititties to int errors 
+"""converting float infinititties to int errors"""
 >>> add_integer(float('inf'), 2)
 Traceback (most recent call last):
 ...
 OverflowError: cannot convert float infinity to integer
 
 
-#converting float NaN to int errors
+"""converting float NaN to int errors"""
 >>> add_integer(float('NaN'), 2)
 Traceback (most recent call last):
 ...
