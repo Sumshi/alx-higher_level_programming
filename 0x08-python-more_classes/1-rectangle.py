@@ -24,7 +24,6 @@ class Rectangle:
 
         self.__width = value
 
-
     @property
     def height(self):
         """sets height private attribute"""
