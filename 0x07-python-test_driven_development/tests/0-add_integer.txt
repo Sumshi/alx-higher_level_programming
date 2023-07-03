@@ -43,11 +43,11 @@ checking negative and positive addition:
     99
 
 checking float with int addition:
-    >>> add_integer(2.1, 4)
+    >>> add_integer(2.34, 4)
     6
 
 int with float addition:
-    >>> add_integer(2, 3.3)
+    >>> add_integer(2, 3.33)
     5
 
 float addition:
@@ -76,6 +76,12 @@ pass in a string for b:
     ...
     TypeError: b must be an integer
 
+pass in both a and b as strings:
+    >>> add_integer("maya", "tom")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
 
 pass in nothing:
     >>> add_integer(None)
@@ -83,6 +89,11 @@ pass in nothing:
     ...
     TypeError: a must be an integer
 
+adding complex numbers:
+    >>> add_integer(1 + 2j, 6)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
 
 converting float infinititties to int errors:
     >>> add_integer(float('inf'), 2)
