@@ -1,6 +1,24 @@
-```say_my_name```
+The ``3-say_my_name`` module
+======================
 
+Using ``say_my_name``
+-------------------
+
+
+"""importing function"""
 >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+"""Checking for module docstring:"""
+>>> m = __import__("3-say_my_name").__doc__
+>>> len(m) > 1
+True
+
+"""Checking for function docstring:"""
+>>> f = __import__("3-say_my_name").say_my_name.__doc__
+>>> len(f) > 1
+True
+
 >>> say_my_name("John", "Smith")
 My name is John Smith
 
@@ -12,10 +30,24 @@ Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
 
+
+>>> say_my_name(None, "Ben")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+>>> say_my_name("Ben", None)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+
 >>> say_my_name(10, "Ben")
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
+
 
 >>> say_my_name(23)
 Traceback (most recent call last):

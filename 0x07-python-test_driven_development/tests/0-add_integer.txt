@@ -7,6 +7,16 @@ Using ``add_integer``
 """importing the function from module"""
 >>> add_integer = __import__('0-add_integer').add_integer
 
+"""Checking for module docstring:"""
+>>> m = __import__("0-add_integer").__doc__
+>>> len(m) > 1
+True
+
+"""Checking for function docstring:"""
+>>> f = __import__("0-add_integer").add_integer.__doc__
+>>> len(f) > 1
+True
+
 """checking for regular addition"""
 >>> add_integer(5,2)
 7
