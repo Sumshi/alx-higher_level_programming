@@ -7,22 +7,41 @@ Using ``add_integer``
 """importing the function from module"""
 >>> add_integer = __import__('0-add_integer').add_integer
 
+"""checking for regular addition"""
 >>> add_integer(5,2)
 7
 >>> add_integer(1.0, 2.1)
 3
->>> add_integer(0)
-98
->>> add_integer(45, 24)
-69
+>>> add_integer(0, 10)
+10
+
+"""checking positive and negative addition"""
 >>> add_integer(2, -3)
 -1
+
+"""checking negative and positive addition"""
+>>> add_integer(-6, 8)
+2
+
 >>> add_integer(.1)
 98
+
 >>> add_integer(-1,1)
 0
 >>> add_integer(1)
 99
+
+"""checking float with int addition"""
+>>> add_integer(2.1, 4)
+6
+
+"""int with float addition"""
+>>> add_integer(2, 3.3)
+5
+
+"""float addition"""
+>>> add_integer(2.12, 3.34)
+5
 
 """ ERRORS """
 
