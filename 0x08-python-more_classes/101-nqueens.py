@@ -1,57 +1,50 @@
 #!/usr/bin/python3
-from sys import argv
+"""A program that solves the N queens problem."""
+import sys
 
-
-def check_if_safe(i, j, board):
-    """
-    Args:
-        i : Argument
-        j : Argument
-        board : Argument
-
-    """
-    for element in board:
-        if (
-            i == element[0]
-            or j == element[1]
-            or abs(i - element[0]) == abs(j - element[1])
-        ):
-            return False
-    return True
-
-
-def backtrack(n, row, q_board, s_board):
-    """
-    Args:
-        n : Argument
-        row : Argument
-        q_board : Argument
-        s_board : Argument
-
-    """
-    if row == n:
-        s_board.append(q_board.copy())
-        return
-
-    for column in range(n):
-        if check_if_safe(row, column, q_board):
-            q_board.append([row, column])
-            backtrack(n, row + 1, q_board, s_board)
-            q_board.pop()
-
-
-if len(argv) != 2:
+if len(sys.argv) != 2:
     print("Usage: nqueens N")
-    exit(1)
-if not argv[1].isdigit():
+    sys.exit(1)
+
+try:
+    SIZE = int(sys.argv[1])
+except ValueError:
     print("N must be a number")
-    exit(1)
-n = int(argv[1])
-if n < 4:
+    sys.exit(1)
+
+if SIZE < 4:
     print("N must be at least 4")
-    exit(1)
-solution_board = []
-queen_board = []
-backtrack(n, 0, queen_board, solution_board)
-for row in solution_board:
-    print(row)
+    sys.exit(1)
+
+
+def solve_n_queens(N: int):
+    """Computes all possible solutions to the problem for a given N.
+
+    Args:
+        N (int): Dimenstion of the chessboard / number of queens.
+    """
+    def is_safe(board, row, col):
+        # Check if it is safe to place a queen at the given position
+        for i in range(row):
+            if board[i] == col or \
+                    board[i] - i == col - row or \
+                    board[i] + i == col + row:
+                return False
+        return True
+
+    def solve(board, row):
+        if row == N:
+            # All queens have been placed, print the solution
+            print([[i, board[i]] for i in range(N)])
+        else:
+            for col in range(N):
+                if is_safe(board, row, col):
+                    board[row] = col
+                    solve(board, row + 1)
+
+    board = [-1] * N
+    solve(board, 0)
+
+
+if __name__ == "__main__":
+    solve_n_queens(SIZE)
