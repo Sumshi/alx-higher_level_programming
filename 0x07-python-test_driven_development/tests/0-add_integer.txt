@@ -102,7 +102,7 @@ converting float infinititties to int errors:
     OverflowError: cannot convert float infinity to integer
 
 
-converting float NaN to int errors:
+converting float not a number NaN to int errors:
     >>> add_integer(float('NaN'), 2)
     Traceback (most recent call last):
     ...
