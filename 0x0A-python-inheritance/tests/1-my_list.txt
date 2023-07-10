@@ -23,8 +23,8 @@ Checking for method docstring:
 	 True
 
 Checking that MyList inherits from list:
-	 >>> issubclass(MyList, list)
-	 True
+         >>> issubclass(MyList, list)
+         True
 
 Checking for empty list:
 	 >>> l = MyList()
