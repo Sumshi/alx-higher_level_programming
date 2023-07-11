@@ -5,6 +5,6 @@
 
 def read_file(filename=""):
     """reads contents of a file"""
-    with open(filename) as file:
-        for line in file:
-            print(line, end='')
+    with open("my_file_0.txt") as filename:
+        read_contents = filename.read()
+        print(read_contents, end='')
