@@ -11,4 +11,4 @@ def load_from_json_file(filename):
     function that parses json data from file to python object:
     """
     with open(filename, 'r') as file:
-        json.load(file)
+        return json.load(file)
