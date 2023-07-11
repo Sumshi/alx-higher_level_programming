@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+"""python object to json string"""
 import json
 """json module is imported"""
 
