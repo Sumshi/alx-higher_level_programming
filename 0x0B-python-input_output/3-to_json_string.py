@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""converts python object to json string"""
+
 import json
 
 
