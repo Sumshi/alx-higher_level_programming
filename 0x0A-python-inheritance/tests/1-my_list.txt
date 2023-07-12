@@ -22,7 +22,7 @@ Checking for method docstring:
 	 >>> len(mod) > 1
 	 True
 
-Checking that MyList inherits from list:
+Checking if MyList inherits from list:
          >>> issubclass(MyList, list)
          True
 
@@ -65,6 +65,11 @@ Checking for one negative number:
 	 [-1, 1, 2, 3, 4, 5]
 	 >>> print(l)
 	 [4, 3, 2, 1, -1, 5]
+
+Test for single item:
+	>>> l = MyList([1])
+	>>> print(l)
+	[1]
 
 Checking for all negative numbers:
 	 >>> l = MyList()
