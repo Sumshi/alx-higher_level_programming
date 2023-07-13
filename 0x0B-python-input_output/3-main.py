@@ -18,7 +18,7 @@ my_dict = {
 }
 s_my_dict = to_json_string(my_dict)
 print(s_my_dict)
-print(type(s_my_dict))
+print(type(my_dict))
 
 try:
     my_set = { 132, 3 }
