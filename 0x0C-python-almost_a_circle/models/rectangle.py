@@ -75,9 +75,9 @@ class Rectangle(Base):
 
     def display(self):
         """prints # to the stdout"""
-        for _ in range(self.__y):
+        for _ in range(self.__y):  # handles for y axis
             print()
-        for _ in range(self.__height):
+        for _ in range(self.__height):  # handles for x axis
             print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
@@ -88,8 +88,8 @@ class Rectangle(Base):
         """assigns an argument to each attribute"""
         if args:  # if args is present
             attributes = ['id', 'width', 'height', 'x', 'y']
-            for i, arg in enumerate(args):
-                setattr(self, attributes[i], arg)
+            for index, arg in enumerate(args):
+                setattr(self, attributes[index], arg)
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
