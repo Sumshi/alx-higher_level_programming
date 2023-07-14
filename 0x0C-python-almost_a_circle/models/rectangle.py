@@ -2,8 +2,8 @@
 
 """defines a class rectangle that inherits from base class"""
 
-
-Base = __import__('base').Base
+from models.base import Base
+# Base = __import__('base').Base
 
 
 class Rectangle(Base):
@@ -85,8 +85,12 @@ class Rectangle(Base):
         """prints string representation of rectangle"""
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        for i, arg in enumerate(args):
-            setattr(self, attributes[i], arg)
+        if args:  # if args is present
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
