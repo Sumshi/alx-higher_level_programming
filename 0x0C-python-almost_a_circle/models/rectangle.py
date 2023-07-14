@@ -3,7 +3,6 @@
 """defines a class rectangle that inherits from base class"""
 
 from models.base import Base
-# Base = __import__('base').Base
 
 
 class Rectangle(Base):
