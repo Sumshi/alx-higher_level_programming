@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """defines a class square that inherits from rectangle class"""
-from models.square import Square
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
