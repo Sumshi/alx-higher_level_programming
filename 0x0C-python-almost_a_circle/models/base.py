@@ -37,5 +37,13 @@ class Base:
         filename = cls.__name__ + ".json"
         obj_dicts = [obj.to_dictionary() for obj in list_objs]
         json_str = cls.to_json_string(obj_dicts)
-        with open(filename, mode='w', encoding='utf-8') as file:
+        with open(filename, mode='w') as file:
             file.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """desirializes json string to python object"""
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
