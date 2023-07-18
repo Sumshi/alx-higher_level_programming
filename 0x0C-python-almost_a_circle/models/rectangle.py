@@ -1,26 +1,32 @@
 #!/usr/bin/python3
 
-"""defines a class rectangle that inherits from base class"""
+"""Write a Child class Rectangle"""
 
 from models.base import Base
 
 
 class Rectangle(Base):
+    """
+    A subclass of class Base
+    Class Rectangle inherits from Base
+    Private instance attributes, each with its own public getter and setter
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)  # id is defined in the base class
+        """Initialize instances for class rectangle"""
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)  # Calling the super class
 
     @property
     def width(self):
-        """defines private attribute for width"""
+        """Retrive the attribute"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """sets the value for width"""
+        """setting and validating width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -29,12 +35,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """defines private attribute for height"""
+        """Retrive height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """sets the value for height"""
+        """setting and validating height"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -43,12 +49,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """defines private attribute for x"""
+        """Retrieve x"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """sets the attribute for x"""
+        """setting and validating x"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -57,12 +63,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """defines private attribute for y"""
+        """Retrieve y"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """sets the attribute for y"""
+        """setting and validating y"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -70,14 +76,14 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """returns area of a rectangle"""
-        return (self.__width) * (self.__height)
+        """Get area of the Rectangle"""
+        return self.__width * self.__height
 
     def display(self):
         """prints # to the stdout"""
-        for _ in range(self.__y):  # handles for y axis
+        for _ in range(self.__y):
             print()
-        for _ in range(self.__height):  # handles for x axis
+        for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
@@ -89,18 +95,18 @@ class Rectangle(Base):
         """assigns an argument to each attribute"""
         if args:  # if args is present
             attributes = ['id', 'width', 'height', 'x', 'y']
-            for index, arg in enumerate(args):
-                setattr(self, attributes[index], arg)
-        else:
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+        else:  # if args is not provided use kwargs
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """returns the dictionary representation of a Rectangle"""
+        """Returns dict representation of a Rectangle"""
         return {
-            "id": self.id,
-            "width": self.width,
-            "height": self.height,
             "x": self.x,
-            "y": self.y,
-            }
+            "y": self.__y,
+            "id": self.id,
+            "height": self.__height,
+            'width': self.__width,
+        }

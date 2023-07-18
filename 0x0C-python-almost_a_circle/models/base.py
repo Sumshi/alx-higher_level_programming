@@ -1,68 +1,69 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
+import json
+import csv
+import turtle
+=======
+>>>>>>> 308d532018cb8b1d2af8eae1a60cf565ce441c80
+
+"""Write the first class Base"""
+
 import json
 import csv
 import turtle
 
-"""This is the base class"""
-
 
 class Base:
-    """defines the super(base) class"""
+    """The base(super) class"""
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initializing the base instance"""
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+            self.id = self.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns the JSON string representation of list_dictionaries"""
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        """Returns the json string representation of list_dictionaries"""
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """
-        writes the JSON string representation of list_objs to a file:
-
-        Args:
-        list_objs is a list of instances who inherits of Base
-        If list_objs is None, save an empty list
-        """
+        """writes the JSON string representation of list_objs to a file"""
         if list_objs is None:
             list_objs = []
         filename = cls.__name__ + ".json"
-        with open(filename, "w") as file:
-            json.dump([obj.to_dictionary() for obj in list_objs], file)
+        obj_dicts = [obj.to_dictionary() for obj in list_objs]
+        json_str = cls.to_json_string(obj_dicts)
+        with open(filename, mode='w', encoding='utf-8') as file:
+            file.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):
-        """desirializes json string to python object"""
-        if json_string is None or len(json_string) == 0:
+        """returns the list of the JSON string representation json_string"""
+        if json_string is None or json_string == []:
             return []
         else:
             return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attributes already set:"""
+        """returns an instance with all attributes already set"""
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)  # this creates a temporary instance
-        else:  # for the square
+            dummy = cls(1, 1)
+        else:
             dummy = cls(1)
-        dummy.update(**dictionary)  # updates dummy attributes with dict values
+        dummy.update(**dictionary)
         return (dummy)
 
     @classmethod
     def load_from_file(cls):
-        """returns a list of instances
-        Try and except handles cases where the file doesnt exist
-        """
+        """returns a list of instances"""
         try:
             with open(cls.__name__ + ".json", "r") as file:
                 list = cls.from_json_string(file.read())
@@ -113,3 +114,43 @@ class Base:
                 return [cls.create(**d) for d in list]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module.
+        Args:
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw.
+        """
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#b7312c")
+        turt.pensize(3)
+        turt.shape("turtle")
+
+        turt.color("#ffffff")
+        for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turt.color("#b5e3d8")
+        for sq in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(sq.x, sq.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(sq.width)
+                turt.left(90)
+                turt.forward(sq.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turtle.exitonclick()
