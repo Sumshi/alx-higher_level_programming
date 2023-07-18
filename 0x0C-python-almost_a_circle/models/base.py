@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Write the first class Base"""
+"""Write the first class Base that is parent for rectangle and square"""
 
 import json
 import csv
