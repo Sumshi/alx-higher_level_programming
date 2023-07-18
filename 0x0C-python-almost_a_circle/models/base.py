@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
+import json
+import csv
+import turtle
+=======
+>>>>>>> 308d532018cb8b1d2af8eae1a60cf565ce441c80
 
 """Write the first class Base that is parent for rectangle and square"""
 
