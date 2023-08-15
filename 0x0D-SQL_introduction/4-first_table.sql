@@ -1,15 +1,8 @@
--- Script that creates a table called first_table
+-- creates a table called first_table in the current DB in my MySQL server
 -- If the table first_table already exists, your script should not fail
+-- You are not allowed to use the SELECT or SHOW statements
 
--- Create the database if it doesn't exist
-CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
-
--- Use the database
-USE hbtn_0c_0;
-
--- Create the table
-CREATE TABLE IF NOT EXISTS first_table (
+CREATE TABLE IF NOT EXISTS first_table(
     id INT,
     name VARCHAR(256)
 );
-
