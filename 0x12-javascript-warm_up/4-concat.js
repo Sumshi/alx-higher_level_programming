@@ -4,8 +4,4 @@
 // import built-in module "process" to use process
 const process = require('process');
 const elements = process.argv;
-if (elements[2]) {
-  console.log(elements[2]);
-} else {
-  console.log('No argument');
-}
+console.log(elements[2] + ' ' + 'is' + ' ' + elements[3]);
