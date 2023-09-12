@@ -1,6 +1,25 @@
 #!/usr/bin/node
+const { argv } = require('process');
+const file = require('fs');
 
-const fs = require('fs');
-const src1 = fs.readFileSync(process.argv[2], 'utf8');
-const src2 = fs.readFileSync(process.argv[3], 'utf8');
-fs.writeFileSync(process.argv[4], src1 + src2);
+file.readFile(argv[2], (err, data) => {
+  if (err) {
+    throw err;
+  }
+  file.appendFile(argv[4], data, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
+});
+
+file.readFile(argv[3], (err, data) => {
+  if (err) {
+    throw err;
+  }
+  file.appendFile(argv[4], data, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
+});
