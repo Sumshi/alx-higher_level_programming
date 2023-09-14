@@ -22,8 +22,8 @@ my_cursor = my_database.cursor()
 
 # execute a select query to select data
 my_cursor.execute(
-    "SELECT * FROM states ORDER BY states.id ASC;"
-)
+    "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC;"
+    )
 
 # fetch the data from the query in tuple form
 my_data = my_cursor.fetchall()
