@@ -21,13 +21,8 @@ my_database = MySQLdb.connect(
 my_cursor = my_database.cursor()
 
 # execute a select query to select data
-my_cursor.execute(
-    """
-    SELECT * FROM states
-    WHERE name = '{}'
-    ORDER BY states.id;
-    """.format(argv[4])
-    )
+query = "SELECT * FROM states WHERE name = %s ORDER BY states.id;"
+my_cursor.execute(query, (argv[4],))
 
 # fetch the data from the query in tuple form
 my_data = my_cursor.fetchall()
