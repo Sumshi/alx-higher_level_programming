@@ -19,10 +19,10 @@ if __name__ == "__main__":
     )
 
     # create session maker object that binds to the previous db
-    my_session_maker = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine)
 
     # creates a new session
-    my_session = my_session_maker()
+    my_session = Session()
 
     state = my_session.query(State).order_by(State.id).first()
     if state is None:
