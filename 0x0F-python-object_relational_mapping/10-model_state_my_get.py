@@ -23,11 +23,12 @@ if __name__ == "__main__":
 
     # creates a new session
     my_session = Session()
+
     state_name = argv[4]
-    result = my_session.query(State).filter(State.name.like(state_name)).scalar()
-    if result is None:
-        print("Not found")
-    else:
+    result = my_session.query(State).filter(State.name.like(state_name)).first()
+    if result:
         print("{}".format(state.id))
+    else:
+        print("Not found")
     # close the session
     my_session.close()
