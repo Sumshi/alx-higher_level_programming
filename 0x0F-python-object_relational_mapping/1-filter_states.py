@@ -21,7 +21,12 @@ if __name__ == "__main__":
 
     # Execute a SELECT query to select data
     my_cursor.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC;"
+        """
+        SELECT * FROM states
+        WHERE name LIKE BINARY 'N%'
+        ORDER BY states.id
+        ASC;
+        """
     )
 
     # fetch all the data returned by the query
