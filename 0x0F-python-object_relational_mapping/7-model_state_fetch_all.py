@@ -1,31 +1,25 @@
 #!/usr/bin/python3
-
+"""Start link class to table in database
 """
-Module that connects python script to a database
-and retrieves data from table states and prints
-id and name
-"""
-from sys import argv
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker  # creates session interacting with db
+import sys
 from model_state import Base, State
+from sqlalchemy.orm import sessionmaker, Session
+
+from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
-
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'
-        .format(argv[1], argv[2], argv[3]),
-        pool_pre_ping=True  # specifies that the engine should check db status
-    )
+        .format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
 
-    # create session maker object that binds to the previous db
-    my_session_maker = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine)
 
-    # creates a new session
-    my_session = my_session_maker()
+    # creating a new session
+    my_session = Session()
 
     for state in my_session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
 
-    # close the session
+    # close session
     my_session.close()
