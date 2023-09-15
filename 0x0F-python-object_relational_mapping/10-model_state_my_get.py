@@ -23,7 +23,8 @@ if __name__ == "__main__":
 
     # creates a new session
     my_session = Session()
-    result = my_session.query(State).filter(State.name == argv[4]).scalar()
+    state_name = argv[4]
+    result = my_session.query(State).filter(State.name.like(state_name)).scalar()
     if result is None:
         print("Not found")
     else:
