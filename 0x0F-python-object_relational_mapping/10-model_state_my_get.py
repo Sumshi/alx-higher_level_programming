@@ -19,16 +19,14 @@ if __name__ == "__main__":
     )
 
     # create session maker object that binds to the previous db
-    my_session_maker = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine)
 
     # creates a new session
-    my_session = my_session_maker()
-
-    for state in my_session.query(State):
-        if argv[4] == state.name:
-            print("{}".format(state.id))
-        else:
-            print("Not found")
-
+    my_session = Session()
+    result = my_session.query(State).filter(State.name == argv[4]).one()
+    if result is None:
+        print("Not found")
+    else:
+        print("{}".format(state.id))
     # close the session
     my_session.close()
