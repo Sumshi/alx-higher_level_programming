@@ -23,17 +23,23 @@ if __name__ == "__main__":
 
     # Execute a SELECT query to fetch data
     my_cursor.execute(
-        """SELECT * FROM cities
-        INNER JOIN states
+        """
+        SELECT cities.name FROM cities
+        JOIN states
         ON cities.state_id = states.id
-        ORDER BY cities.id"""
+        WHERE states.name = BINARY '{}'
+        ORDER BY cities.id ASC
+        """.format(argv[4])
     )
-
-    print(", ".join([city[2]
-                     for city in my_cursor.fetchall()
-                     if city[4] == argv[4]])
-
-          )
+    my_data = my_cursor.fetchall()
+    tup = ()
+    for row in my_data:
+        tup += row
+    for i in range(len(tup)):
+        if i == len(tup) - 1:
+            print(tup[i])
+        else:
+            print(tup[i], end=", ")
 
     # Close all cursors
     my_cursor.close()
