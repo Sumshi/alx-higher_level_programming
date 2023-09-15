@@ -2,7 +2,8 @@
 
 """
 Module that connects python script to a database
-and retrieves data from table states and prints
+and retrieves data from table states thats
+has letter a and prints
 id and name
 """
 from sys import argv
@@ -19,14 +20,12 @@ if __name__ == "__main__":
     )
 
     # create session maker object that binds to the previous db
-    my_session_maker = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine)
 
     # creates a new session
-    my_session = my_session_maker()
+    my_session = Session()
 
-    for state in my_session.query(State).order_by(State.id):
-        if "a" in state.name:
-            print("{}: {}".format(state.id, state.name))
-
+    for state in my_session.query(State).order_by(State.id).filter(State.name.like("%a%")).all():
+        print("{}: {}".format(state.id, state.name))
     # close the session
     my_session.close()
