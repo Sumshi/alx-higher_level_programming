@@ -1,17 +1,20 @@
 #!/usr/bin/python3
-
 """
-Module that connects to the database
+module state_city
+Implements the class definition of city
 """
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from sqlalchemy import MetaData, Column, Table, Integer, String, ForeignKey
+from model_state import Base
 
 
 class City(Base):
-    """defining the City class"""
+    """
+    cities class implementation
+
+    Args:
+        Base (_type_): _description_
+    """
     __tablename__ = 'cities'
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    id = Column(Integer, autoincrement=True, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False, ForeignKey("states.id"))
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
