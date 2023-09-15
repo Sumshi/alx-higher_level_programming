@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     # Connect database to mysql server
     # connect to mysqldb server
-my_database = MySQLdb.connect(
+my_db = MySQLdb.connect(
     host="localhost",
     user=argv[1],
     password=argv[2],
@@ -18,7 +18,7 @@ my_database = MySQLdb.connect(
     port=3306
 )
 # define cursor used to execute mysql queries
-my_cursor = my_database.cursor()
+my_cursor = my_db.cursor()
 
 # Execute a SELECT query to select data
 my_cursor.execute(
@@ -36,4 +36,4 @@ for row in my_data:
 my_cursor.close()
 
 # Close all databases
-my_database.close()
+my_db.close()
