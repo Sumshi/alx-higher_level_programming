@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # creates a new session
     my_session = Session()
 
-    for state in my_session.query(State).order_by(State.id).filter(State.name.like("%a%")).all():
+    for state in my_session.query(State).filter(State.name.like("%a%")).all():
         print("{}: {}".format(state.id, state.name))
     # close the session
     my_session.close()
