@@ -1,31 +1,39 @@
 #!/usr/bin/python3
 """
-Module that connects a python script to a database
+lists all states from the database hbtn_0e_0_usa
 """
 
+# code should not be executed when imported
 if __name__ == "__main__":
-
     import MySQLdb
     from sys import argv
 
-    # Connect database using command-line arguments
-    my_db = MySQLdb.connect(host='localhost', user=argv[1], password=argv[2],
-                            db=argv[3], port=3306)
-    # Create cursor obj to interact with database
-    my_cursor = my_db.cursor()
+# connect to mysqldb server
+my_database = MySQLdb.connect(
+    host="localhost",
+    user=argv[1],
+    password=argv[2],
+    database=argv[3],
+    port=3306
+)
 
-    # Execute a SELECT query to fetch data
-    my_cursor.execute("SELECT * FROM states ORDER BY states.id ASC;")
+# define cursor used to execute mysql queries
+my_cursor = my_database.cursor()
 
-    # fetch all the data returned by the query
-    my_data = my_cursor.fetchall()
+# execute a select query to select data
+my_cursor.execute(
+    "SELECT * FROM states ORDER BY states.id ASC;"
+)
 
-    # Iterate through the fetched data and print each row
-    for row in my_data:
-        print(row)
+# fetch the data from the query in tuple form
+my_data = my_cursor.fetchall()
 
-    # Close all cursors
-    my_cursor.close()
+# iterate through the fetched data and print each row
+for row in my_data:
+    print(row)
 
-    # Close all databases
-    my_db.close()
+# finally close the cursor
+my_cursor.close()
+
+# close the database also
+my_database.close()
