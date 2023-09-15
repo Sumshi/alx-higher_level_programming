@@ -23,7 +23,7 @@ if __name__ == "__main__":
     my_cursor.execute(
         """
         SELECT * FROM states
-        WHERE name LIKE BINARY '{}'
+        WHERE name = %s
         ORDER BY states.id
         ASC;
         """.format(argv[4])
