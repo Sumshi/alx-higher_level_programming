@@ -27,14 +27,17 @@ if __name__ == "__main__":
             WHERE states.name = %s ORDER BY cities.id ASC;"
     my_cursor.execute(query, (argv[4],))
     my_data = my_cursor.fetchall()
-    tup = ()
-    for row in my_data:
-        tup += row
-    for i in range(len(tup)):
-        if i == len(tup) - 1:
-            print(tup[i])
-        else:
-            print(tup[i], end=", ")
+    if len(my_data) == 0:
+        print()
+    else:
+        tup = ()
+        for row in my_data:
+            tup += row
+        for i in range(len(tup)):
+            if i == len(tup) - 1:
+                print(tup[i])
+            else:
+                print(tup[i], end=", ")
 
     # Close all cursors
     my_cursor.close()
