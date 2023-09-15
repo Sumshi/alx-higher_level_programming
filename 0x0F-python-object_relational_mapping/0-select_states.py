@@ -16,10 +16,10 @@ if __name__ == "__main__":
         db=argv[3],
         port=3306
     )
-    # Create cursor obj to interact with database
+    # define cursor used to execute mysql queries
     my_cursor = my_database.cursor()
 
-    # Execute a SELECT query to fetch data
+    # Execute a SELECT query to select data
     my_cursor.execute("SELECT * FROM states ORDER BY states.id ASC;")
 
     # fetch all the data returned by the query
