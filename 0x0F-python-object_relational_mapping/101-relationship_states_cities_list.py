@@ -24,8 +24,8 @@ if __name__ == "__main__":
 
     # creates a new session
     my_session = Session()
-    query = my_session.query(State).outerjoin(City).order_by\
-            (State.id, City.id).all()
+    query = my_session.query(State).outerjoin(City)\
+        .order_by(State.id, City.id).all()
     for states in query:
         print(f"{states.id}: {states.name}")
     for city in states.cities:
