@@ -24,11 +24,10 @@ if __name__ == "__main__":
 
     # creates a new session
     my_session = Session()
-    query = my_session.query(State).outerjoin(City)\
-        .order_by(State.id, City.id).all()
+    query = my_session.query(State).order_by(State.id).all()
     for states in query:
         print(f"{states.id}: {states.name}")
-    for city in states.cities:
-        print(f"    {city.id}: {city.name}")
+        for city in states.cities:
+            print(f"    {city.id}: {city.name}")
     # close the session
     my_session.close()
