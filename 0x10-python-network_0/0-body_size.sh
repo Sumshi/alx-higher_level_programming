@@ -1,5 +1,3 @@
 #!/bin/bash
-# takes in a url and sends it a reguest sends a get reguest to the url
+#Takes in a URL and send a request to it
 curl -s "$1" | wc -c
-
-
