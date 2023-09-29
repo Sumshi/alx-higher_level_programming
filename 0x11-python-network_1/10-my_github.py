@@ -18,4 +18,5 @@ if __name__ == "__main__":
     auth = HTTPBasicAuth(username, password)
     # sending a get request to github API
     response = requests.get(url, auth=auth)
+    # print users github id
     print(response.json().get("id"))
