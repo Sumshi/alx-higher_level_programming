@@ -7,6 +7,7 @@ and uses the GitHub API to display your id
 """
 import requests  # for making http requests
 import sys  # for command line arguments
+from requests.auth import HTTPBasicAuth
 
 if __name__ == "__main__":
     # username and password from command line
