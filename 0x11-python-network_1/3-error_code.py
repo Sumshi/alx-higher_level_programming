@@ -6,7 +6,7 @@ script that takes in a URL, sends a request to the URL
 and displays the body of the response
 """
 import urllib.request  # for making http requests
-import urllib.error  # for url encoding
+import urllib.error  # for status error codes
 import sys  # for command line arguments
 
 if __name__ == "__main__":
