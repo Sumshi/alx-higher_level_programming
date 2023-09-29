@@ -11,11 +11,9 @@ if __name__ == "__main__":
     email = sys.argv[2]
     data = {'email': email}
     # encodes the data dictionary
-    data = urllib.parse.urlencode(data).encode('utf-8')
+    data_encoded = urllib.parse.urlencode(data).encode('ascii')
     # creating a post request using Request class
-    request = urllib.request.Request(url, data)
-    # handle the response
-    with urllib.request.urlopen(request) as response:
+    with urllib.request.urlopen(url, data=data_encoded) as response:
         # read the response and retrieves body as bytes
         body = response.read().decode('utf-8')
-        print("Your email is:", email)
+        print(body)
