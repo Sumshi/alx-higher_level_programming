@@ -4,9 +4,11 @@
 """ script that fetches https://alx-intranet.hbtn.io/status"""
 import urllib.request
 
-with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
-    html = response.read()
-    print("Body response:")
-    print(" - type:", type(html))
-    print(" - content:", html)
-    print(" - utf8 content:", html.decode('utf-8'))  # decode converts bytes
+if __name__ == "__main__":
+    url = 'https://alx-intranet.hbtn.io/status'
+    with urllib.request.urlopen(url) as response:
+        body = response.read()
+        print("Body response:")
+        print(" - type:", type(body))
+        print(" - content:", body)
+        print(" - utf8 content:", html.decode('utf-8'))
