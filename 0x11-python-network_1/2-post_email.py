@@ -17,5 +17,5 @@ if __name__ == "__main__":
     # handle the response
     with urllib.request.urlopen(request) as response:
         # read the response and retrieves body as bytes
-        body = response.read().decode('utf-8')
+        # body = response.read().decode('utf-8')
         print("Your email is:", email)
