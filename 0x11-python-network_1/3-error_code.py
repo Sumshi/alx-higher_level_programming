@@ -1,21 +1,20 @@
 #!/usr/bin/python3
 
 
-""" script that fetches url"""
+"""
+script that takes in a URL, sends a request to the URL
+and displays the body of the response
+"""
 import urllib.request  # for making http requests
-import urllib.parse  # for url encoding
+import urllib.error  # for url encoding
 import sys  # for command line arguments
 
 if __name__ == "__main__":
     url = sys.argv[1]  # url from command line
-    email = sys.argv[2]
-    data = {'email': email}
-    # encodes the data dictionary
-    data = urllib.parse.urlencode(data).encode('utf-8')
-    # creating a post request using Request class
-    request = urllib.request.Request(url, data)
-    # handle the response
-    with urllib.request.urlopen(request) as response:
-        # read the response and retrieves body as bytes
-        # body = response.read().decode('utf-8')
-        print("Your email is:", email)
+    try:
+        with urllib.request.urlopen(url) as response:
+            body = response.read().decode('utf-8')
+            print(body)
+    except urllib.error.HTTPError as e:
+        # handling HTTP error exception
+        print("Error code:", e.code)

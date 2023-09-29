@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-""" script that fetches url"""
+""" script that takes in a URL and an email, sends a POST request to the url"""
 import urllib.request  # for making http requests
 import urllib.parse  # for url encoding
 import sys  # for command line arguments
