@@ -8,6 +8,6 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]  # url from command line
     email = sys.argv[2]
-    with urllib.request.urlopen(url/email) as response:
+    with urllib.request.urlopen(url) as response:
         body = response.read()
         print("Your email is:", email)
