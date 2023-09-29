@@ -8,4 +8,6 @@ if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
     response = requests.get(url)
     data = response.text
-    print(data)
+    print("Body response:")
+    print(" - type:", type(data))
+    print(" - content:", data)
