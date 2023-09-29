@@ -13,10 +13,9 @@ if __name__ == "__main__":
     # username and password from command line
     username = sys.argv[1]
     password = sys.argv[2]
-    API_url = 'url "https://api.github.com/user'
-
+    url = 'https://api.github.com/user'
     # authentication
     auth = HTTPBasicAuth(username, password)
     # sending a get request to github API
-    response = requests.get(API_url, auth=auth)
+    response = requests.get(url, auth=auth)
     print(response.json().get("id"))
