@@ -1,0 +1,4 @@
+checking module doc:
+    >>> m = __import__("11-model_state_insert").__doc__
+    >>> len(m) > 1
+    True

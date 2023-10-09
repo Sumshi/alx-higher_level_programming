@@ -118,7 +118,7 @@ class Base:
         """
         turt = turtle.Turtle()
         turt.screen.bgcolor("#b7312c")
-        turt.pensize(3)
+        turt.pensize(3) # gives size of the pen
         turt.shape("turtle")
 
         turt.color("#ffffff")

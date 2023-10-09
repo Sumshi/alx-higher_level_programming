@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Module that connects python script to a database
 and retrieves data from table states and prints
