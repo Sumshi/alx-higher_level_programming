@@ -11,6 +11,6 @@ request(url, function (error, response, body) {
     console.log(error);
   } else {
     // Print the response status code if a response was received
-    console.log('code:', response && response.statusCode);
+    console.log('code:', response.statusCode);
   }
 });
